@@ -58,6 +58,11 @@ a {
     background-color: transparent;
 
 @media (max-width: 768px) {
+    #noiseToggleButton {
+    font-size: 10px;
+    padding: 4px 8px
+    }
+    
     #animated-text, #square-bracket-small {
         font-size: 36px;
     }
@@ -72,6 +77,13 @@ a {
 }
 
 @media (max-width: 480px) {
+    #noiseToggleButton {
+    font-size: 8px; /* Even smaller font size for phones */
+    padding: 3px 6px; /* Adjust padding to be more suitable for small screens */
+    bottom: 5px; /* Optionally adjust positioning for better visibility */
+    right: 5px;
+    }
+    
     #animated-text, #square-bracket-small {
         font-size: 24px;
     }
