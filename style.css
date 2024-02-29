@@ -1,0 +1,97 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#container {
+    display: flex;
+}
+
+#animated-text, #square-bracket-big, #square-bracket-small, #left-static, #right-static {
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    position: relative;
+}
+
+#animated-text {
+    font-size: 72px;
+    font-weight: bold;
+}
+
+#square-bracket-big {
+    font-size: 144px;
+}
+
+#square-bracket-small {
+    font-size: 72px;
+}
+
+#left-static,#right-static {
+    font-size: 36px
+}
+
+#noiseToggleButton {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-family: 'Russo One', sans-serif;
+    font-size: 12px; /* Adjust size as needed */
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: transparent;
+
+@media (max-width: 768px) {
+    #noiseToggleButton {
+    font-size: 10px;
+    padding: 4px 8px
+    }
+    
+    #animated-text, #square-bracket-small {
+        font-size: 36px;
+    }
+
+    #left-static, #right-static {
+        font-size: 18px;
+    }
+
+    #square-bracket-big {
+        font-size: 72px;
+    }
+}
+
+@media (max-width: 480px) {
+    #noiseToggleButton {
+    font-size: 8px; /* Even smaller font size for phones */
+    padding: 3px 6px; /* Adjust padding to be more suitable for small screens */
+    bottom: 5px; /* Optionally adjust positioning for better visibility */
+    right: 5px;
+    }
+    
+    #animated-text, #square-bracket-small {
+        font-size: 24px;
+    }
+
+    #left-static, #right-static {
+        font-size: 12px;
+    }
+    #square-bracket-big {
+        font-size: 48px;
+    }
+}
