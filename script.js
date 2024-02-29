@@ -7,13 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
   var volumeSlider = document.getElementById('volumeSlider');
   var titleDisplay = document.getElementById('titleDisplay');
 
+
+
+  volumeSlider.addEventListener('input', updateVolume);
+  // updateVolume();
+
   function updateVolume() {
       audio.volume = volumeSlider.value / 100;
   }
-
-  volumeSlider.addEventListener('input', updateVolume);
-  updateVolume();
-
+  
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
