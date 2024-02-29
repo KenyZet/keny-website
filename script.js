@@ -3,6 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
   var ctx = canvas.getContext('2d');
   const textElement = document.getElementById('animated-text');
   let isNoiseEnabled = true;
+  var audio = document.getElementById('audioPlayer');
+  var volumeSlider = document.getElementById('volumeSlider');
+  var titleDisplay = document.getElementById('titleDisplay');
+
+  function updateVolume() {
+      audio.volume = volumeSlider.value / 100;
+  }
+
+  volumeSlider.addEventListener('input', updateVolume);
+  updateVolume();
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
