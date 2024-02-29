@@ -14,7 +14,6 @@ a {
 
 #container {
     display: flex;
-    /* Usunięto zmianę kierunku na pionowy */
 }
 
 #animated-text, #square-bracket-big, #square-bracket-small, #left-static, #right-static {
@@ -24,43 +23,46 @@ a {
 }
 
 #animated-text {
-    font-size: 72px; /* Domyślny rozmiar */
+    font-size: 72px;
     font-weight: bold;
 }
 
 #square-bracket-big {
-    font-size: 144px; /* Specyficzny rozmiar dla dużego nawiasu */
+    font-size: 144px;
 }
 
-#square-bracket-small, #left-static, #right-static {
+#square-bracket-small {
     font-size: 72px; /* Domyślny rozmiar dla małych nawiasów i statycznego tekstu */
 }
 
-#left-static {
-    margin-right: 10px;
-}
-
-#right-static {
-    margin-left: 10px;
+#left-static,#right-static {
+    font-size: 36px
 }
 
 /* Media queries dla urządzeń mobilnych */
 @media (max-width: 768px) {
-    #animated-text, #square-bracket-small, #left-static, #right-static {
-        font-size: 36px; /* Zmniejszenie rozmiaru czcionki dla urządzeń mobilnych */
+    #animated-text, #square-bracket-small {
+        font-size: 36px;
+    }
+
+    #left-static, #right-static {
+        font-size: 18px;
     }
 
     #square-bracket-big {
-        font-size: 72px; /* Zmniejszenie rozmiaru dużego nawiasu dla urządzeń mobilnych */
+        font-size: 72px;
     }
 }
 
 /* Opcjonalnie, jeszcze mniejsze urządzenia */
 @media (max-width: 480px) {
-    #animated-text, #square-bracket-small, #left-static, #right-static {
+    #animated-text, #square-bracket-small {
         font-size: 24px; /* Jeszcze mniejsze czcionki dla bardzo małych ekranów */
     }
 
+    #left-static, #right-static {
+        font-size: 12px;
+    }
     #square-bracket-big {
         font-size: 48px; /* Jeszcze mniejszy duży nawias */
     }
