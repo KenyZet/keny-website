@@ -5,7 +5,11 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: white;
-    text-decoration: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 #container {
