@@ -33,13 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function addNoise() {
-    if (!isNoiseEnabled) return; // Stop adding noise to text if disabled
     textElement.style.color = `rgba(0,0,0,${Math.random()})`;
     textElement.style.textShadow = `0 0 ${Math.random() * 10}px rgba(0,0,0,${Math.random()})`;
   }
 
   function toggleNoise() {
-    // isNoiseEnabled = !isNoiseEnabled;
+    isNoiseEnabled = !isNoiseEnabled;
     document.getElementById('noiseToggleButton').textContent = `[BG NOISE: ${isNoiseEnabled ? 'ON' : 'OFF'}]`;
     if (!isNoiseEnabled) {
       ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas if noise is disabled
