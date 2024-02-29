@@ -7,6 +7,10 @@ body, html {
     background-color: white;
 }
 
+#container {
+    display: flex;
+}
+
 #animated-text {
     font-size: 72px;
     font-weight: bold;
@@ -20,4 +24,18 @@ body, html {
     color: black;
     font-family: 'Russo One', sans-serif;
     position: relative;
+}
+
+#left-static, #right-static {
+    font-size: 72px;
+    color: black;
+    font-family: 'Russo One', sans-serif;
+}
+
+#left-static {
+    margin-right: 10px;
+}
+
+#right-static {
+    margin-left: 10px;
 }
