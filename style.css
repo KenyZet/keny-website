@@ -11,6 +11,5 @@ body, html {
     font-size: 72px;
     font-weight: bold;
     color: black;
-    /* Dodajemy miejsce na animację szumu */
     position: relative;
 }
