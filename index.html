@@ -16,16 +16,15 @@
     <div id="animated-text"><a href="/">KENY</a></div>
     <div id="square-bracket-big"> ]</div>
     <!-- Nowy odnośnik BD -->
-    <br>
-    <div><a href="#" id="bdLink">[BD]</a></div>
-    <!-- Kontener na odtwarzacz, domyślnie ukryty -->
-    <div id="player" style="display:none;">
-      <audio id="streamPlayer" controls></audio>
-      <div id="volumeControl">Suwak głośności (implementacja JS)</div>
-      <div id="trackTitle">Tytuł utworu (implementacja JS)</div>
-      <img src="https://www.bassdrive.com/images/logo.png" alt="Bassdrive Logo"/>
+    <div id="player" controls autoplay>
+        <audio id="audioPlayer" controls autoplay>
+            <source src="https://www.bassdrive.com/pop-up/" type="audio/mpeg">
+            Twoja przeglądarka nie obsługuje elementu audio.
+        </audio>
+        <label for="volumeSlider">Głośność: </label>
+        <input type="range" id="volumeSlider" min="0" max="100" value="100">
+        <img src="https://www.bassdrive.com/images/logo.png" alt="Bassdrive Logo"/>
     </div>
-    </br>
     <button id="noiseToggleButton" onclick="toggleNoise()">[BG NOISE: ON]</button>
     <script src="script.js"></script>
 </body>
