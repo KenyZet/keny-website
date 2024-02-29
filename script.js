@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var canvas = document.getElementById('noiseCanvas');
   var ctx = canvas.getContext('2d');
   const textElement = document.getElementById('animated-text');
-
+  let isNoiseEnabled = true
+  
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
