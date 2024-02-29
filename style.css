@@ -38,14 +38,13 @@ a {
 }
 
 #square-bracket-small {
-    font-size: 72px; /* Domyślny rozmiar dla małych nawiasów i statycznego tekstu */
+    font-size: 72px;
 }
 
 #left-static,#right-static {
     font-size: 36px
 }
 
-/* Media queries dla urządzeń mobilnych */
 @media (max-width: 768px) {
     #animated-text, #square-bracket-small {
         font-size: 36px;
@@ -60,16 +59,15 @@ a {
     }
 }
 
-/* Opcjonalnie, jeszcze mniejsze urządzenia */
 @media (max-width: 480px) {
     #animated-text, #square-bracket-small {
-        font-size: 24px; /* Jeszcze mniejsze czcionki dla bardzo małych ekranów */
+        font-size: 24px;
     }
 
     #left-static, #right-static {
         font-size: 12px;
     }
     #square-bracket-big {
-        font-size: 48px; /* Jeszcze mniejszy duży nawias */
+        font-size: 48px;
     }
 }
