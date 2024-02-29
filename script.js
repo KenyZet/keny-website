@@ -37,4 +37,5 @@ document.addEventListener('DOMContentLoaded', function() {
   resizeCanvas();
 
   setInterval(addNoise, 100);
+  setInterval(generateNoise, 100);
 });
