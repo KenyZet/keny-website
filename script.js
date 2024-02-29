@@ -54,7 +54,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   setInterval(addNoise, 100);
   setInterval(generateNoise, 50);
-
-  // Ensure the initial state is correctly set
-  toggleNoise();
 });
