@@ -1,0 +1,16 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+#animated-text {
+    font-size: 72px;
+    font-weight: bold;
+    color: black;
+    /* Dodajemy miejsce na animację szumu */
+    position: relative;
+}
