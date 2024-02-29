@@ -55,3 +55,21 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(addNoise, 100);
   setInterval(generateNoise, 50);
 });
+
+
+
+// Function to replace the [BD] link with the streaming player
+document.getElementById('bdLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    // Hide the BD link
+    this.style.display = 'none';
+    // Show the player container
+    document.getElementById('player').style.display = 'block';
+    // Initialize the streaming player
+    var player = document.getElementById('streamPlayer');
+    player.src = 'https://www.bassdrive.com/pop-up/';
+    player.play();
+    // TODO: Implement volume control and track title display
+});
+
+// Additional functionality to be implemented here
