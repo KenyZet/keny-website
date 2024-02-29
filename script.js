@@ -33,9 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
     textElement.style.textShadow = `0 0 ${Math.random() * 10}px rgba(0,0,0,${Math.random()})`;
   }
 
+  function toggleNoise() {
+    isNoiseEnabled = !isNoiseEnabled;
+    document.getElementById('noiseToggleButton').textContent = `[BG NOISE: ${isNoiseEnabled ? 'ON' : 'OFF'}]`;
+}
+  
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
-
+  window.onload = function() {
+  toggleNoise();
   setInterval(addNoise, 100);
   setInterval(generateNoise, 50);
 });
