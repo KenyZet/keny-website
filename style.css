@@ -45,6 +45,18 @@ a {
     font-size: 36px
 }
 
+#noiseToggleButton {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-family: 'Russo One', sans-serif;
+    font-size: 12px; /* Adjust size as needed */
+    cursor: pointer;
+    background-color: #f0f0f0; /* Example background, adjust as needed */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+
 @media (max-width: 768px) {
     #animated-text, #square-bracket-small {
         font-size: 36px;
