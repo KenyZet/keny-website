@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Keny's personal website">
-    <meta name="keywords" content="keny, KENY, Keny, website">
-    <title>[KENY]</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="Icons/k_icon.ico">
+<meta charset="UTF-8">
+<title>Odtwarzacz Audio Bassdrive</title>
 </head>
 <body>
-    <canvas id="noiseCanvas"></canvas>
-    <div id="square-bracket-big">[ </div>
-    <div id="animated-text"><a href="/">KENY</a></div>
-    <div id="square-bracket-big"> ]</div>
-    <div id="player" controls autoplay>
-        <audio id="audioPlayer" controls autoplay>
-            <source src="https://www.bassdrive.com/pop-up/" type="audio/mpeg">
-            Twoja przeglądarka nie obsługuje elementu audio.
-        </audio>
-    </div>
-    <button id="noiseToggleButton" onclick="toggleNoise()">[BG NOISE: ON]</button>
-    <script src="script.js"></script>
+
+<h2>Odtwarzacz Audio Bassdrive</h2>
+
+<audio controls autoplay>
+  <source src="https://www.bassdrive.com/v2/streams/BassDrive.pls" type="audio/mpeg">
+  Twój przeglądarka nie wspiera tagu audio.
+</audio>
+
 </body>
 </html>
