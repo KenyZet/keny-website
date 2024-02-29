@@ -12,15 +12,18 @@
 </head>
 <body>
     <canvas id="noiseCanvas"></canvas>
-    <!-- <div id="square-bracket-small">[</div>
-    <div id="left-static">KENY</div>
-    <div id="square-bracket-small">]</div> -->
     <div id="square-bracket-big">[ </div>
     <div id="animated-text"><a href="/">KENY</a></div>
     <div id="square-bracket-big"> ]</div>
-    <!-- <div id="square-bracket-small">[</div>
-    <div id="right-static">KENY</div>
-    <div id="square-bracket-small">]</div> -->
+    <!-- Nowy odnośnik BD -->
+    <div><a href="#" id="bdLink">[BD]</a></div>
+    <!-- Kontener na odtwarzacz, domyślnie ukryty -->
+    <div id="player" style="display:none;">
+      <audio id="streamPlayer" controls></audio>
+      <div id="volumeControl">Suwak głośności (implementacja JS)</div>
+      <div id="trackTitle">Tytuł utworu (implementacja JS)</div>
+      <img src="https://www.bassdrive.com/images/logo.png" alt="Bassdrive Logo"/>
+    </div>
     <button id="noiseToggleButton" onclick="toggleNoise()">[BG NOISE: ON]</button>
     <script src="script.js"></script>
 </body>
