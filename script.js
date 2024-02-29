@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
   resizeCanvas();
   window.onload = function() {
   toggleNoise();
+};
   setInterval(addNoise, 100);
   setInterval(generateNoise, 50);
 });
