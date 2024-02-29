@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function toggleNoise() {
-    isNoiseEnabled = !isNoiseEnabled;
+    // isNoiseEnabled = !isNoiseEnabled;
     document.getElementById('noiseToggleButton').textContent = `[BG NOISE: ${isNoiseEnabled ? 'ON' : 'OFF'}]`;
     if (!isNoiseEnabled) {
       ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas if noise is disabled
