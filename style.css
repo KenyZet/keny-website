@@ -8,8 +8,15 @@ body, html {
 }
 
 #animated-text {
-    font-size: 100px; /* Dwukrotnie większa czcionka niż poprzednio */
+    font-size: 72px;
     font-weight: bold;
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    position: relative;
+}
+
+#static-text {
+    font-size: 72px;
     color: black;
     font-family: 'Russo One', sans-serif;
     position: relative;
