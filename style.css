@@ -14,34 +14,26 @@ a {
 
 #container {
     display: flex;
+    /* Usunięto zmianę kierunku na pionowy */
+}
+
+#animated-text, #square-bracket-big, #square-bracket-small, #left-static, #right-static {
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    position: relative;
 }
 
 #animated-text {
-    font-size: 72px;
+    font-size: 72px; /* Domyślny rozmiar */
     font-weight: bold;
-    color: black;
-    font-family: 'Russo One', sans-serif;
-    position: relative;
 }
 
 #square-bracket-big {
-    font-size: 144px;
-    color: black;
-    font-family: 'Russo One', sans-serif;
-    position: relative;
+    font-size: 144px; /* Specyficzny rozmiar dla dużego nawiasu */
 }
 
-#square-bracket-small {
-    font-size: 72px;
-    color: black;
-    font-family: 'Russo One', sans-serif;
-    position: relative;
-}
-
-#left-static, #right-static {
-    font-size: 36px;
-    color: black;
-    font-family: 'Russo One', sans-serif;
+#square-bracket-small, #left-static, #right-static {
+    font-size: 72px; /* Domyślny rozmiar dla małych nawiasów i statycznego tekstu */
 }
 
 #left-static {
@@ -50,4 +42,26 @@ a {
 
 #right-static {
     margin-left: 10px;
+}
+
+/* Media queries dla urządzeń mobilnych */
+@media (max-width: 768px) {
+    #animated-text, #square-bracket-small, #left-static, #right-static {
+        font-size: 36px; /* Zmniejszenie rozmiaru czcionki dla urządzeń mobilnych */
+    }
+
+    #square-bracket-big {
+        font-size: 72px; /* Zmniejszenie rozmiaru dużego nawiasu dla urządzeń mobilnych */
+    }
+}
+
+/* Opcjonalnie, jeszcze mniejsze urządzenia */
+@media (max-width: 480px) {
+    #animated-text, #square-bracket-small, #left-static, #right-static {
+        font-size: 24px; /* Jeszcze mniejsze czcionki dla bardzo małych ekranów */
+    }
+
+    #square-bracket-big {
+        font-size: 48px; /* Jeszcze mniejszy duży nawias */
+    }
 }
