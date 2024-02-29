@@ -157,3 +157,12 @@ button:hover {
 }
 
 /* Możesz dodać więcej stylów tutaj, aby dopasować wygląd do swoich preferencji */
+
+
+#bdLink {
+    display: block; /* Ensure the BD link is displayed on a new line under KENY */
+    font-family: 'Russo One', sans-serif; /* Apply the Russo One font */
+    margin-top: 10px; /* Add some space above the BD link */
+    font-size: 1.5em; /* Adjust the font size as needed */
+    color: #4CAF50; /* Use a green color for the link, adjust if needed */
+}
