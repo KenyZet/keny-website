@@ -20,15 +20,22 @@ body, html {
     position: relative;
 }
 
-#static-text {
+#square-bracket-big {
     font-size: 144px;
     color: black;
     font-family: 'Russo One', sans-serif;
     position: relative;
 }
 
-#left-static, #right-static {
+#square-bracket-small {
     font-size: 72px;
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    position: relative;
+}
+
+#left-static, #right-static {
+    font-size: 36px;
     color: black;
     font-family: 'Russo One', sans-serif;
 }
