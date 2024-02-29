@@ -8,8 +8,9 @@ body, html {
 }
 
 #animated-text {
-    font-size: 100px;
+    font-size: 72px;
     font-weight: bold;
     color: black;
+    font-family: 'Russo One', sans-serif; /* Dodajemy właściwość font-family i wskazujemy na Russo One */
     position: relative;
 }
