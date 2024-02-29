@@ -8,7 +8,7 @@ body, html {
 }
 
 #animated-text {
-    font-size: 144px; /* Dwukrotnie większa czcionka niż poprzednio */
+    font-size: 100px; /* Dwukrotnie większa czcionka niż poprzednio */
     font-weight: bold;
     color: black;
     font-family: 'Russo One', sans-serif;
