@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   var canvas = document.getElementById('noiseCanvas');
   var ctx = canvas.getContext('2d');
-  const textElement = document.getElementById('animated-text');
   let isNoiseEnabled = true;
+  let currentBlurValue = Math.random() * (10 - 5) + 5;
+  let targetBlurValue = Math.random() * (10 - 5) + 5;
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -32,26 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
     ctx.putImageData(imageData, 0, 0);
   }
 
-  function addNoise() {
-    textElement.style.color = `rgba(0,0,0,${Math.random()})`;
-    textElement.style.textShadow = `0 0 ${Math.random() * 10}px rgba(0,0,0,${Math.random()})`;
-  }
-
-  function toggleNoise() {
-    isNoiseEnabled = !isNoiseEnabled;
-    document.getElementById('noiseToggleButton').textContent = `[BG NOISE: ${isNoiseEnabled ? 'ON' : 'OFF'}]`;
-    if (!isNoiseEnabled) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas if noise is disabled
-    } else {
-      generateNoise();
+  function updateBlur() {
+    if (Math.abs(currentBlurValue - targetBlurValue) < 0.5) {
+      targetBlurValue = Math.random() * (10 - 5) + 5; // Choose a new target value when the current is close to the target
     }
+    // Adjust the currentBlurValue to move towards the targetBlurValue
+    currentBlurValue += (targetBlurValue - currentBlurValue) * 0.05; // Adjust the 0.05 to change the speed of transition
+    document.getElementById('animated-text').style.filter = `blur(${currentBlurValue.toFixed(1)}px)`;
   }
 
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
 
-  document.getElementById('noiseToggleButton').addEventListener('click', toggleNoise);
-
-  setInterval(addNoise, 100);
   setInterval(generateNoise, 50);
+  setInterval(updateBlur, 50);
 });
