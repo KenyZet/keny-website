@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var canvas = document.getElementById('noiseCanvas');
   var ctx = canvas.getContext('2d');
   let isNoiseEnabled = true;
-  let currentBlurValue = Math.random() * (10 - 5) + 5;
-  let targetBlurValue = Math.random() * (10 - 5) + 5;
+  let currentBlurValue = Math.random() * (15 - 3) + 2;
+  let targetBlurValue = Math.random() * (15 - 3) + 2;
+
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  function generateNoise(opacity = 0.2) {
+  function generateNoise(opacity = 0.8) {
     if (!isNoiseEnabled) return; // Stop generating noise if disabled
     var w = canvas.width,
         h = canvas.height,
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateBlur() {
     if (Math.abs(currentBlurValue - targetBlurValue) < 0.5) {
-      targetBlurValue = Math.random() * (10 - 5) + 5; // Choose a new target value when the current is close to the target
+      targetBlurValue = Math.random() * (15 - 3) + 2; // Choose a new target value when the current is close to the target
     }
     // Adjust the currentBlurValue to move towards the targetBlurValue
     currentBlurValue += (targetBlurValue - currentBlurValue) * 0.05; // Adjust the 0.05 to change the speed of transition
@@ -45,6 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
 
-  setInterval(generateNoise, 50);
-  setInterval(updateBlur, 50);
+  setInterval(generateNoise, 20);
+  setInterval(updateBlur, 200);
 });
