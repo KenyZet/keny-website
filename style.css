@@ -135,3 +135,32 @@ a {
         font-size: 48px;
     }
 }
+
+.glitch {
+    position: relative;
+    /* color: transparent; */
+  }
+  
+  .glitch::after,
+  .glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0.7;
+  }
+  
+  .glitch.active::before {
+    visibility: visible;
+    mix-blend-mode: screen;
+    color: rgba(200, 0, 0, 0.8);
+    transform: translate(var(--x-translate-before), var(--y-translate-before));
+  }
+  
+  .glitch.active::after {
+    visibility: visible;
+    mix-blend-mode: screen;
+    color: rgba(0, 200, 0, 0.8);
+    transform: translate(var(--x-translate-after), var(--y-translate-after));
+  }
