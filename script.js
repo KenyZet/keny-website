@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentBlurValue = Math.random() * (15 - 3) + 2;
   let targetBlurValue = Math.random() * (15 - 3) + 2;
 
-
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function generateNoise(opacity = 0.8) {
-    if (!isNoiseEnabled) return; // Stop generating noise if disabled
+    if (!isNoiseEnabled) return;
     var w = canvas.width,
         h = canvas.height,
         imageData = ctx.createImageData(w, h),
@@ -25,10 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     while (i < n) {
       var v = (Math.random() * 255) | 0;
-      pixels[i++] = v; // Red
-      pixels[i++] = v; // Green
-      pixels[i++] = v; // Blue
-      pixels[i++] = Math.random() < opacity ? (Math.random() * 256) | 0 : 0; // Alpha
+      pixels[i++] = v;
+      pixels[i++] = v;
+      pixels[i++] = v;
+      pixels[i++] = Math.random() < opacity ? (Math.random() * 256) | 0 : 0;
     }
 
     ctx.putImageData(imageData, 0, 0);
@@ -36,12 +35,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateBlur() {
     if (Math.abs(currentBlurValue - targetBlurValue) < 0.5) {
-      targetBlurValue = Math.random() * (15 - 3) + 2; // Choose a new target value when the current is close to the target
+      targetBlurValue = Math.random() * (15 - 3) + 2;
     }
-    // Adjust the currentBlurValue to move towards the targetBlurValue
-    currentBlurValue += (targetBlurValue - currentBlurValue) * 0.05; // Adjust the 0.05 to change the speed of transition
+    currentBlurValue += (targetBlurValue - currentBlurValue) * 0.05;
     document.getElementById('animated-text').style.filter = `blur(${currentBlurValue.toFixed(1)}px)`;
   }
+
+  function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+  
+  function applyGlitchEffect() {
+    const elements = document.querySelectorAll('.glitch');
+    elements.forEach(el => {
+      // Losowe przesunięcia dla ::before
+      const xRandBefore = randomIntFromInterval(-15, 15);
+      const yRandBefore = randomIntFromInterval(-15, 15);
+  
+      // Losowe przesunięcia dla ::after
+      const xRandAfter = randomIntFromInterval(-15, 15);
+      const yRandAfter = randomIntFromInterval(-15, 15);
+  
+      el.classList.add('active');
+  
+      // Ustawianie zmiennych CSS dla ::before
+      el.style.setProperty('--x-translate-before', `${xRandBefore}px`);
+      el.style.setProperty('--y-translate-before', `${yRandBefore}px`);
+  
+      // Ustawianie zmiennych CSS dla ::after
+      el.style.setProperty('--x-translate-after', `${xRandAfter}px`);
+      el.style.setProperty('--y-translate-after', `${yRandAfter}px`);
+  
+      setTimeout(() => {
+        el.classList.remove('active');
+      }, 200); // Trwałość efektu
+    });
+  }
+  
+  
+  function triggerGlitch() {
+    for (let i = 0; i < 5; i++) {
+      setTimeout(applyGlitchEffect, i * 200);
+    }
+  }
+
+  setInterval(triggerGlitch, randomIntFromInterval(10000, 15000));
 
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
